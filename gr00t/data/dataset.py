@@ -755,6 +755,8 @@ class LeRobotSingleDataset(Dataset):
         original_key = subkey_meta.original_key
         if original_key is None:
             original_key = key
+
+        #print(self.curr_traj_data)
         for i in range(len(step_indices)):
             task_indices.append(self.curr_traj_data[original_key][step_indices[i]].item())
         return self.tasks.loc[task_indices]["task"].tolist()

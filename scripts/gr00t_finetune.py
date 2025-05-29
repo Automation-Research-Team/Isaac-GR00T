@@ -18,7 +18,7 @@ import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-
+import wandb
 import torch
 import tyro
 from transformers import TrainingArguments
@@ -30,6 +30,10 @@ from gr00t.experiment.runner import TrainRunner
 from gr00t.model.gr00t_n1 import GR00T_N1
 from gr00t.utils.peft import get_lora_model
 
+wandb.init(
+    project="pg-vla",
+    entity="k-makihara"
+)
 
 @dataclass
 class Config:
