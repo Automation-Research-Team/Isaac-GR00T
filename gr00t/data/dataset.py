@@ -444,6 +444,8 @@ class LeRobotSingleDataset(Dataset):
                 if key == "lapa_action" or key == "dream_actions":
                     continue  # no need for any metadata for lapa actions because it comes normalized
                 # Check if the key is valid
+                print(key)
+                print(self.lerobot_modality_meta)
                 try:
                     self.lerobot_modality_meta.get_key_meta(key)
                 except Exception as e:
